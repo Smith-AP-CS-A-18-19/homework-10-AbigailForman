@@ -8,6 +8,8 @@ public class Homework10 {
 	 * columns
 	 */
 	public Homework10(int rows, int cols) {
+		int[][] newArray = new int[5][];
+newArray[0] = new int[10];
 
 	}
 
@@ -17,12 +19,23 @@ public class Homework10 {
 	 * row major order. Return the filled array
 	 */
 	public int[][] problem1(int n) {
+		for (int i = 0; i < values.length; i++) {
+			values[i] = i + 1;
+		}
+
 
 	}
 
 	/* Return row r of the stored array
 	 */
 	public int[] problem2(int r) {
+		int r = 0;
+        for (boolean[] i : landscape){
+            count += i.length;
+
+
+        }
+        return r;
 
 	}
 
@@ -32,6 +45,14 @@ public class Homework10 {
 	 * or more neighbors
 	 */
 	public int problem3(int r, int c) {
+		int arraySum( int[] array) {
+		int sum = 0;
+		for(int i = 0; i <= array.length; i++){
+		sum = sum + array[i];
+}
+
+return sum;
+}
 
 	}
 
@@ -39,6 +60,10 @@ public class Homework10 {
 	 * elements from the indicated column
 	 */
 	public ArrayList<Integer> problem4(int c) {
+		ArrayList<String> ints = new ArrayList<String>(
+    Arrays.asList("int c"));
+
+
 
 	}
 
@@ -46,6 +71,11 @@ public class Homework10 {
 	 * the supplied ArrayList
 	 */
 	public int problem5(ArrayList<Integer> aList) {
+		int i;
+		double sum = 0;
+		for(i = 1; i < m.size(); i++)
+    sum += m.get(i);
+		return sum;
 
 	}
 
