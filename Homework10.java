@@ -7,9 +7,9 @@ public class Homework10 {
 	 * 2D array of int values with the designated rows and
 	 * columns
 	 */
+	 int[][] newArray;
 	public Homework10(int rows, int cols) {
-		int[][] newArray = new int[5][];
-newArray[0] = new int[10];
+		newArray = new int[rows][cols];
 
 	}
 
@@ -19,25 +19,24 @@ newArray[0] = new int[10];
 	 * row major order. Return the filled array
 	 */
 	public int[][] problem1(int n) {
-		for (int i = 0; i < values.length; i++) {
-			values[i] = i + 1;
-		}
+		for (int i = 0; i < newArray.length; i++) {
 
+			for (int j = 0; j < newArray[i].length; j++) {
+				newArray[i][j] = n;
+				n++;
+			}
+		}
+		return newArray;
 
 	}
 
 	/* Return row r of the stored array
 	 */
 	public int[] problem2(int r) {
-		int r = 0;
-        for (boolean[] i : landscape){
-            count += i.length;
-
+        return newArray[r];
 
         }
-        return r;
 
-	}
 
 	/* Find and return the sum of the indicated cell and its
 	 * four cardinal neighbors (up, down, left, right). Ensure
@@ -45,36 +44,47 @@ newArray[0] = new int[10];
 	 * or more neighbors
 	 */
 	public int problem3(int r, int c) {
-		int arraySum( int[] array) {
-		int sum = 0;
-		for(int i = 0; i <= array.length; i++){
-		sum = sum + array[i];
-}
-
-return sum;
-}
-
+		int sum = newArray[r][c];
+		if (c != 0) {
+			sum = sum + newArray[r][c - 1];
+		}
+		if (r != 0) {
+			sum = sum + newArray[r - 1][c];
+		}
+		if (c != newArray[0].length - 1) {
+			sum = sum + newArray[r][1 + c];
+		}
+		if (r != newArray.length - 1) {
+			sum = sum + newArray[1 + r][c];
+		}
+		return sum;
 	}
+
+
 
 	/* Create and return an ArrayList that contains the
 	 * elements from the indicated column
 	 */
-	public ArrayList<Integer> problem4(int c) {
-		ArrayList<String> ints = new ArrayList<String>(
-    Arrays.asList("int c"));
-
-
+	public ArrayList<Integer> problem4(int cols) {
+		ArrayList<Integer> s = new ArrayList<Integer>();
+		for (int i = 0; i < newArray.length; i++) {
+			s.add(newArray[i][cols]);
+		}
+		return s;
 
 	}
+
+
 
 	/* Calculate and return the sum of the integers in
 	 * the supplied ArrayList
 	 */
 	public int problem5(ArrayList<Integer> aList) {
 		int i;
-		double sum = 0;
-		for(i = 1; i < m.size(); i++)
-    sum += m.get(i);
+		int sum = 0;
+		for(i = 0; i < aList.size(); i++) {
+			sum += aList.get(i);
+		}
 		return sum;
 
 	}
